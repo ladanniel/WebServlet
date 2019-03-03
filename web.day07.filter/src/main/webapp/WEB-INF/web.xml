@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+ <servlet>
+            <servlet-name>commentServlet</servlet-name>
+            <servlet-class>web.commentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+            <servlet-name>commentServlet</servlet-name>
+            <url-pattern>/comment</url-pattern>
+    </servlet-mapping>
+    <!-- 配置过滤器 -->
+    <filter>
+         <filter-name>CommonFilter</filter-name>
+         <filter-class>web.CommonFilter</filter-class>
+         <!-- 初始化参数可以一个，也可以多个 如果要配置多个初始化参数，可以使用多个init-param配置 -->
+         <init-param>
+                    <param-name>illegal</param-name>
+                    <param-value>猫</param-value>
+         </init-param>
+         
+    </filter>
+    <filter-mapping>
+         <filter-name>CommonFilter</filter-name>
+         <url-pattern>/comment</url-pattern>
+    </filter-mapping>
+    <!-- 第二个过滤器 -->
+      <filter>
+         <filter-name>CommonFilter2</filter-name>
+         <filter-class>web.CommonFilter2</filter-class>
+         <!-- 初始化参数可以一个，也可以多个 如果要配置多个初始化参数，可以使用多个init-param配置 -->
+         <init-param>
+                    <param-name>length</param-name>
+                    <param-value>20</param-value>
+         </init-param>
+    </filter>
+    <filter-mapping>
+         <filter-name>CommonFilter2</filter-name>
+         <url-pattern>/comment</url-pattern>
+    </filter-mapping>
+    <!-- 第三个、第四个、、、、、、、第n个 -->
+    
+    
+</web-app>

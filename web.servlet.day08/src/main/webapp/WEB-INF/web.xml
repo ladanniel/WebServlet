@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <servlet-name>SomeServlet</servlet-name>
+    <servlet-class>web.SomeServlet</servlet-class>
+    <init-param>
+      <param-name>max</param-name>
+      <param-value>25</param-value>
+    </init-param>
+    <init-param>
+      <param-name>min</param-name>
+      <param-value>19</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SomeServlet</servlet-name>
+    <url-pattern>/bmi</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description><!-- description的作用是注释 -->
+    <display-name>OtherServlet</display-name>
+    <servlet-name>OtherServlet</servlet-name>
+    <servlet-class>web.OtherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OtherServlet</servlet-name>
+    <url-pattern>/OtherServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OtherServlet1</display-name>
+    <servlet-name>OtherServlet1</servlet-name>
+    <servlet-class>web.Other</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OtherServlet1</servlet-name>
+    <url-pattern>/Other</url-pattern>
+  </servlet-mapping>
+</web-app>
